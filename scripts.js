@@ -1,13 +1,17 @@
-let count = 0
+function updateStorage(value) {
+  localStorage.setItem("count", value);
+}
 
 function contador() {
-  if(count <= 0 || count > 60) return "00:00";
+  let count = localStorage.getItem("count");
+  if(count <= 0 || count > 60 || count === null) return "00:00";
 
   const countInSeconds = (count * 60) - 1;
   const minutes = Math.trunc(countInSeconds / 60);
   const seconds = parseInt((countInSeconds - (minutes * 60)));
 
-  count = countInSeconds / 60;
+  updateStorage(countInSeconds / 60);
+
   let stringMinutes = minutes;
   let stringSeconds = seconds;
 
@@ -34,7 +38,7 @@ window.onload = function() {
 
 document.querySelector(".submit").addEventListener("click", () => {
   const [input] = document.getElementsByName("minutes");
-  count = input.value;
+  updateStorage(input.value)
 
   document.documentElement.requestFullscreen();
 });

@@ -34,6 +34,7 @@ window.onload = function() {
 
 document.querySelector(".submit").addEventListener("click", () => {
   const [input] = document.getElementsByName("minutes");
-
   count = input.value;
+
+  document.documentElement.requestFullscreen();
 });

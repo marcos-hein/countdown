@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFFFFF;
+
+  --gray-100: #E1E1E6;
+  --gray-300: #A8A8B3;
+  --gray-800: #29292E;
+  --gray-850: #1F2729;
+  --gray-900: #121214;
+
+  --cyan-500: #61DAFB;
+  --yellow-500: #EBA417;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--gray-900);
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body, input, textarea, select, button {
+  font: 400 2rem "Roboto", sans-serif;
+}
+
+input {
+  max-width: 11rem;
+  padding: 0 1.5rem;
+  height: 4rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+  
+  border: 1px solid #D7D7D7D7;
+  background: var(--gray-900);
+
+  font-size: 2rem;
+  line-height: 2rem;
+  color: var(--gray-300);
+
+  transition: 0.2s;
+}
+
+input::placeholder {
+  color: var(--gray-300);
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.count {
+  padding: 2rem;
+  font-size: 30rem;
+  font-weight: 900;
+
+  transition: 0.2s;
+}
+
+.input-minutes {
+  margin-bottom: 3.5rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.submit {
+  height: 4rem;
+  width: 4rem;
+  background: var(--gray-900);
+  border: 1px solid #D7D7D7D7;
+  border-radius: 0 0.25rem 0.25rem 0;
+
+  color: var(--gray-300);
+  font-weight: 400;
+  cursor: pointer;
+  
+  transition: 0.2s;
+}
+
+.submit:hover {
+  background-color: var(--gray-300);
+  color: var(--gray-900);
+}
+
+span {
+  position: absolute;
+  padding-top: 1rem;
+
+  opacity: 0.1;
+  transition: 0.5s;
+}
+
+span:hover {
+  opacity: 0.8;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+@media (max-width: 1300px) {
+  .count {
+    font-size: 20rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  span {
+    font-size: 1.5rem;
+  }
+  .count {
+    font-size: 15rem;
+  }
+}
+
+@media (max-width: 720px) {
+  input {
+    height: 3rem;
+    font-size: 2rem;
+  }
+
+  .count {
+    font-size: 10rem;
+  }
+
+  .submit {
+    height: 3rem;
+    width: 4rem;    
+  }
+}
+
+@media (max-width: 580px) {
+  .count {
+    font-size: 7rem;
+  }
+}
